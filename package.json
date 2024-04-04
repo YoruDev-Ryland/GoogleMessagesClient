@@ -1,0 +1,28 @@
+{
+  "name": "googlemessagesclient",
+  "version": "1.0.0",
+  "description": "Simple web client for Google Messages to keep it separate from your already clogged browser tabs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "YoruDev-Ryland",
+  "license": "ISC",
+  "devDependencies": {
+    "electron-packager": "^17.1.2",
+    "electron": "^29.2.0"
+  },
+  "productName": "GoogleMessagesClient",
+  "win": {
+    "icon": "./icon.ico",
+    "target": [
+      "nsis"
+    ]
+  },
+  "build": {
+    "files": [
+      "node_modules/**/*",
+      "package.json"
+    ]
+  }
+}
