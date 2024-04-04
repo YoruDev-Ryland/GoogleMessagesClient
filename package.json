@@ -1,28 +1,39 @@
 {
-  "name": "googlemessagesclient",
-  "version": "1.0.0",
-  "description": "Simple web client for Google Messages to keep it separate from your already clogged browser tabs",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "YoruDev-Ryland",
-  "license": "ISC",
-  "devDependencies": {
-    "electron-packager": "^17.1.2",
-    "electron": "^29.2.0"
-  },
-  "productName": "GoogleMessagesClient",
-  "win": {
-    "icon": "./icon.ico",
-    "target": [
-      "nsis"
-    ]
-  },
-  "build": {
-    "files": [
-      "node_modules/**/*",
-      "package.json"
-    ]
-  }
+    "name": "googlemessagesclient",
+    "version": "1.0.0",
+    "description": "Simple web client for Google Messages to keep it separate from your already clogged browser tabs",
+    "main": "main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "YoruDev-Ryland",
+    "license": "ISC",
+    "devDependencies": {
+        "electron": "^29.2.0",
+        "electron-builder": "^24.13.3",
+        "electron-packager": "^17.1.2"
+    },
+    "productName": "GoogleMessagesClient",
+    "build": {
+        "appId": "com.yorudev.googlemessagesclient",
+        "productName": "GoogleMessagesClient",
+        "directories": {
+            "output": "dist"
+        },
+        "win": {
+            "target": "nsis",
+            "icon": "./icon.png"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowElevation": true,
+            "allowToChangeInstallationDirectory": true,
+            "installerIcon": "./icon.ico",
+            "uninstallerIcon": "./icon.ico",
+            "installerHeaderIcon": "./icon.ico",
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true,
+            "shortcutName": "GoogleMessagesClient"
+        }
+    }
 }
